@@ -1,23 +1,41 @@
-// list options for hangman
-var word = ["Ender Wiggens", "Leia Organa", "Luke Skywalker", "Jean Luc Picard", "Uhura", "Washburn", "River Song", "Malcolm Reynolds", "The Doctor", "Parzival"];
-
-//var to assign _ to letters in word
+var words = ["ender", "leia", "luke", "picard", "uhura", "washburn", "malcolm", "doctor", "parzival"];
+ 
+var word = words[Math.floor(Math.random() * words.length)];
+    console.log(word);
 
 var answerArray = [];
 
-//choose a random name from var words
-var currentWord = [Math.floor(Math.random()*word.length)];
+var guess = [];
+    
+    for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+    }
+var remainingLetters = word.length;
 
-// logs computer chosen word to console
-console.log(word[currentWord]);
+    document.getElementById("startButton").onclick = function(){
+    while (remainingLetters > 0) {
+    
+        alert(answerArray.join(" "));
+        
+        var guess = prompt("Guess a letter, or click Cancel to stop playing.");
 
-// for loop to assign _ to letters in word
-for (var i=0; i < word.length; i++){
-    answerArray[i]="_";
+        if (guess === null) {
+            break;
+        } else if (guess.length !== 1) {
+            alert("Please enter a single letter.");
+        } else {
+        
+        for (var j = 0; j < word.length; j++) {
+            if (word[j] === guess) {
+            answerArray[j] = guess;
+            remainingLetters--;
+                }
+            }
+        }
+    }
+    
+
+document.getElementById("youWin").innerHTML = ("Good job! The answer was " + word);
 }
 
-//continues looping while still letters to guess
-while (remaining letters > 0){
-
-}
-
+//  wish list: guess counter, list letters already guessed, automatically refresh after game finishes.  Will re-visit when have more #devskillz!
