@@ -46,10 +46,21 @@ p {
     margin:0 auto;
 }
 
-.wrapper, .row {
+.wrapper, .row, div {
   display:flex;
     flex-direction:column;
     align-items:center;
+}
+.twoColumn {
+  width:700px;
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.twoColumn div {
+  border:1px dotted white;
+  padding:5px 15px;
 }
 
 button {
@@ -64,4 +75,8 @@ button {
 button:hover {
   background:darkgrey;
   color:black;
+}
+li {
+  list-style:none;
+  float:left;
 }
