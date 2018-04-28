@@ -41,7 +41,7 @@ p {
     max-width:980px;
     min-height:40vh;
     border:1px dotted white;
-    padding-top:60px;
+    /*padding-top:60px;*/
     background:black;
     margin:0 auto;
 }
